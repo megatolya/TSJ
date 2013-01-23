@@ -1,3 +1,6 @@
-require('./lib/i18n-maker').make(function (langs) {
-    require('./lib/app').start(langs);
+require('./lib/i18n-maker').make(function (err, langs) {
+    if (!err)
+        require('./lib/app').start(langs);
+    else
+        console.log('error compiling languages');
 });

@@ -1,8 +1,8 @@
 {
     "name": "utility",
-    "description": "my diplomaa project",
+    "description": "my diploma project",
     "version": "0.0.1",
-    "private": false,
+    "private": true,
     "author": "Anatoliy Ostrovskiy",
     "dependencies": {
       "jquery": "1.8.x",
