@@ -71,7 +71,7 @@ POST /change
 * Пароль {string}
 * Поддерживаемые дома {JSON}
 
-Лог
+###Лог
 * id {number}
 * тип {string}
 * событие {JSON}
@@ -85,3 +85,13 @@ POST /change
 * Личные сообщения
 * Просмотр соседей (?)
 
+##Установка БД для Mac OS
+```bash
+brew install mongodb
+mkdir ~/mongodb
+mongod --dbpath ~/mongodb/
+#в другом терминале
+mongo
+#db.test.save( { a: 1 } )
+#db.test.find()
+```
