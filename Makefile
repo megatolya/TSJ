@@ -3,7 +3,7 @@ all: build
 
 NODE_MODULES = ./node_modules
 BOWER_MODULES = ./static/components
-
+DB-PATH = ~/mongodb
 
 build:
 	@echo 'installing node modules'
@@ -25,5 +25,19 @@ clean:
 	-rm -rf $(NODE_MODULES)
 	-rm -rf $(BOWER_MODULES)
 start:
-	node boot.js
+	@echo 'starting node'
+	@node boot.js
+db-template:
+	@echo 'creating basic db records'
+	@node lib/helpers/db-template.js
+db-erase:
+	@echo 'removing records'
+	@node lib/helpers/db-erase.js
+db-show:
+	node lib/helpers/db-show.js
+db-test:
+	node lib/helpers/db-test.js
+db-start:
+	mongod --dbpath $(DB-PATH)
+
 
