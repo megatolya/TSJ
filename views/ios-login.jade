@@ -1,0 +1,11 @@
+include ios-head
+            form(action='/login', method='post').ios-login
+                .input-group
+                    .input-row
+                        label=data.i18n.login
+                        input(name='login', type='text', placeholder=data.i18n.login)
+                    .input-row
+                        label=data.i18n.password
+                        input(type='password', name='password')
+                input(type='submit').button-main.button.button-block=data.i18n['log-in']
+

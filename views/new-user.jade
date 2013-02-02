@@ -1,0 +1,30 @@
+include admin-head
+.well
+    form(action='/admin/manage-accounts/new-user', method='post')
+        table.new-user
+            tr
+                td
+                    p=data.i18n.login
+                td
+                    input(name='login')
+            tr
+                td
+                    p=data.i18n.password
+                td
+                    input(name='password')
+            tr
+                td
+                    p=data.i18n.name
+                td
+                    input(name='name')
+            tr
+                td
+                    p=data.i18n.flat
+                td
+                    select(name='_flat')
+                        - flats.forEach(function(flat){
+                            option(value=flat._id)=flat.number
+                        - });
+            tr
+                td
+                    input.btn.btn-success(type='submit', value=data.i18n.add)

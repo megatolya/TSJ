@@ -1,0 +1,26 @@
+body, html {
+    min-width: 619px;
+}
+.new-user {
+    margin: 0 auto;
+}
+.new-user td {
+    padding: 10px;
+}
+.new-flat {
+    margin: 0 auto;
+}
+.new-flat td {
+    padding: 10px;
+}
+.padding-40 {
+    padding: 40px;
+    padding-top:0;
+}
+.modal-body textarea{
+    width: 97%;
+}
+.reload{
+    margin-bottom: 20px;
+}
+

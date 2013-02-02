@@ -1,0 +1,36 @@
+include admin-head
+form(action='/admin/edit-user', method='post')
+    input(value=user._id, name="_id", type='hidden')
+    input(value=flat._id, name="_flat", type='hidden')
+    .well
+        table.new-user
+            tr
+                td
+                    p=data.i18n.login
+                td
+                    input(name='login', value=user.login)
+            tr
+                td
+                    p=data.i18n.password
+                td
+                    input(name='password', value=user.password)
+            tr
+                td
+                    p=data.i18n.name
+                td
+                    input(name='name', value=user.name)
+            tr
+                td
+                    p=data.i18n.phone
+                td
+                    input(name='phone', value=user.phone)
+            tr
+                td
+                    p=data.i18n.cash
+                td
+                    input(name='cash', value=user.cash)
+            tr
+                td
+                    input.btn.btn-success(type='submit', value=data.i18n.edit)
+                td
+                    a.btn.btn-mini.pull-right.btn-danger.btn-mini(href='/admin/remove-user/' + user._id)=data.i18n['remove']

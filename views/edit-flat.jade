@@ -1,0 +1,20 @@
+include admin-head
+form(action='/admin/edit-flat', method='post')
+    input(value=flat._id, name="_id", type='hidden')
+    .well
+        table.new-flat
+            tr
+                td
+                    p=data.i18n.balance
+                td
+                    input(name='balance', value=flat.balance)
+            tr
+                td
+                    p=data.i18n.number
+                td
+                    input(name='number', value=flat.number)
+            tr
+                td
+                    input.btn.btn-success(type='submit', value=data.i18n.edit)
+                td
+                    a.btn.btn-mini.pull-right.btn-danger.btn-mini(href='/admin/remove-flat/' + flat._id)=data.i18n['remove']

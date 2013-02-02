@@ -1,0 +1,8 @@
+include admin-head
+.well
+    h4=user.name
+    p=data.i18n.login + ' : ' + user.login
+    p=data.i18n.phone + ' : ' + user.phone
+    p=data.i18n.flat + ' : '
+        a(href='/admin/flat/' + flat._id)=flat.number
+    a.btn(href='/admin/edit-user/' + user._id)=data.i18n.edit

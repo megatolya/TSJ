@@ -1,0 +1,30 @@
+include admin-head
+.padding-40
+    table.table.table-hover
+        tr
+            td='Логин'
+            td='Имя'
+            td
+        - flats.forEach(function(flat){
+                tr.info
+                    td
+                        b=data.i18n.flat + ' #' + flat.flat.number + ' ' + data.i18n.balance + ': ' + flat.flat.balance
+                    td
+                    td
+                        .btn-group
+                            a.btn.btn-mini.btn-info(href='/admin/edit-flat/' + flat.flat._id)=data.i18n['edit']
+                            a.btn.btn-mini.btn-danger(href='/admin/remove-flat/' + flat.flat._id)=data.i18n['remove']
+            - flat.users.forEach(function(user) {
+                tr
+                    td
+                        a(href='/admin/account/' + user._id)=user.login
+                    td=user.name
+                    td
+                        .btn-group
+                            a.btn.btn-info.btn-mini(href='/admin/edit-user/' + user._id)=data.i18n['edit']
+                            a.btn.btn-danger.btn-mini(href='/admin/remove-user/' + user._id)=data.i18n['remove']
+            - });
+        - });
+    .btn-group(style='margin-left:10px;')
+        a(href='/admin/manage-accounts/new-user').btn-success.btn=data.i18n['add-new-user']
+        a(href='/admin/manage-accounts/new-flat').btn-primary.btn=data.i18n['add-new-flat']

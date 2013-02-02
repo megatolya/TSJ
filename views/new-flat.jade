@@ -1,0 +1,12 @@
+include admin-head
+.well
+    form(action='/admin/manage-accounts/new-flat', method='post')
+        table.new-flat
+            tr
+                td
+                    p=data.i18n.number
+                td
+                    input(name='number')
+            tr
+                td
+                    input.btn.btn-success(type='submit', value=data.i18n.add)

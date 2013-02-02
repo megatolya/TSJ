@@ -1,0 +1,10 @@
+- msgs.length && msgs.forEach(function(msg){
+    tr(id=msg.msg._id)
+        td
+            a(href='/admin/account/' + msg.msg.from)=msg.user.name
+        td=msg.msg.text
+        td=data.msgTypes[msg.msg.type][data.lang]
+        td
+            button.btn.btn-mini.to-answer-form=data.i18n['to-answer']
+- });
+

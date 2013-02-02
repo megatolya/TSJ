@@ -1,0 +1,14 @@
+include admin-head
+.well
+    h3=data.i18n.flat + ' #' + flat.number
+    h5='Текущий счет: ' + flat.balance + ' ' + data.i18n.rub
+    a.btn(href='/admin/edit-flat/' + flat._id)=data.i18n.edit
+.well
+    - if (users.length)
+        h3=data.i18n.livers + ':'
+            - users.forEach(function(user){
+                p
+                    a(href='/admin/account/' + user._id)=user.login
+            - })
+    - else
+        p=data.i18n['no-livers']

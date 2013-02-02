@@ -1,0 +1,12 @@
+input[type='submit'] {
+    width: 100%;
+}
+.content {
+    padding: 10px;
+}
+.im-form {
+    display: none;
+}
+li.pull-right {
+    text-align: right;
+}

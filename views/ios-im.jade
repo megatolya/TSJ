@@ -1,0 +1,26 @@
+include ios-h
+            a.button.button-block.show-im-form=data.i18n['new-message']
+            form.im-form(method='post', action='/im')
+                .segmented-controller
+                    li.active
+                        a(data-call='locksmith')=data.i18n['call-locksmith']
+                    li
+                        a(data-call='electrician')=data.i18n['call-electrician']
+                input.call(type='hidden', value='locksmith', name='type')
+                textarea(rows='5', name='msg')
+                input.button.button-block(type='submit', data.i18n['send'])
+            - if (msgs.length)
+                ul.list
+                    - msgs.forEach(function(msg) {
+                        - if (msg.from === 'from-admin')
+                            li
+                                a
+                                    span.count-main=data.msgTypes[msg.from][data.lang]
+                                    !{msg.text}
+
+                        - else
+                            li.pull-right
+                                a
+                                    span.count-main=data.msgTypes[msg.from][data.lang]
+                                    !{msg.text}
+                    - });
