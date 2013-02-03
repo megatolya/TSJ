@@ -1,12 +1,11 @@
 include ios-h
-            form
+            form(method='post')
                 div(class="input-group")
                     div(class="input-row")
-                        label='Full name'
-                        input(type="text",placeholder="Mister Ratchet")
+                        label=data.i18n['name']
+                        input(type="text", name="name", value=user.name)
                     div(class="input-row")
-                        label='Email'
-                        input(type="email",placeholder="ratchetframework@gmail.com")
-                    div(class="input-row")
-                        label='Username'
-                        input(type="text",placeholder="goRatchet")
+                        label=data.i18n['phone']
+                        input(type="text", name='phone', value=user.phone)
+                input.button.button-block.button-positive(type='submit', value=data.i18n['send'])
+                a.button.button-block.button-negative(href='/')=data.i18n['cancel']

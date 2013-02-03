@@ -1,10 +1,11 @@
 {
-  "name": "miniwiki",
-  "version": "0.3.1",
+  "name": "utility",
+  "version": "1.0.0",
   "dependencies": {
     "jquery": "~1.8.3",
     "mustache": "~0.7.2",
     "bootstrap": "~2.2.2",
-    "ratchet": "~1.0.0"
+    "ratchet": "~1.0.0",
+    "URL.js": "0.0.*"
   }
 }

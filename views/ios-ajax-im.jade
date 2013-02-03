@@ -1,0 +1,11 @@
+- msgs.forEach(function(msg) {
+    - if (msg.from === 'from-admin')
+        li
+            a
+                span.from=data.i18n['msgTypes'][msg.from]
+                !{msg.text}
+
+    - else
+        li.pull-right
+            !{msg.text}
+- });

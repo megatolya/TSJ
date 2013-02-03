@@ -1,11 +1,13 @@
 include admin-head
 .padding-40
+    p=data.i18n['history-of-flat-num'] + ' ' + logs[0].flat.number
     table.table.table-hover
         - logs.forEach(function(log){
             tr
                 td=log.date
                 td
-                    a(href='/admin/account/'+ log.user._id)=log.user.name
+                    - if (log.user)
+                        a(href='/admin/account/'+ log.user._id)=log.user.name
                 td=data.i18n[log.log.type]
                 td=log.log.val + ' ' + data.i18n['rub']
         - });

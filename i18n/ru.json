@@ -45,6 +45,12 @@
     "perMonthPayment": "Ежемесячная плата",
     "paymentHistory": "История платежей",
     "payment": "Платеж",
+    "r-u-sure": "Вы уверены",
+    "spisat": "Списание",
+    "history-of-flat-num": "История платежей квартиры номер",
+    "msg": "Сообщение",
+    "type": "Тип",
+    "text": "Текст",
     "msgTypes": {
         "msg": "",
         "locksmith": "Вызвать слесаря",

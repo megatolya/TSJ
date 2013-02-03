@@ -22,3 +22,8 @@ ul.list .from {
     color: #ddd;
     padding: 2px 10px;
 }
+.info {
+    padding: 0 10px 5px 10px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+}

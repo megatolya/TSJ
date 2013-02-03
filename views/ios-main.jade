@@ -1,5 +1,11 @@
 include ios-head
-            a(href='/balance').button-block=data.i18n['balance']
+            .info
+                h3=data.i18n['current-balance']
+                p=flat.balance.toString() + ' '  + data.i18n['rub']
+                h3=data.i18n['perMonthPayment']
+                p=flat.perMonthPayment.toString() + ' ' + data.i18n['rub']
+                h3=data.i18n['days-past'] +  ' : ' + data.dayPast
+            .button-block.pay=data.i18n['pay']
             a(href='/im').button-block=data.i18n['message-to-service']
             a(href='/settings').button-block=data.i18n['settings']
             a(href='/logout').button-block=data.i18n['logout']

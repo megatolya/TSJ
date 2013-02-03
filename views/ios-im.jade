@@ -1,24 +1,26 @@
 include ios-h
             a.button.button-block.show-im-form=data.i18n['new-message']
             form.im-form(method='post', action='/im')
+                p=data.i18n['type']
                 .segmented-controller
                     li.active
                         a(data-call='locksmith')=data.i18n['call-locksmith']
                     li
                         a(data-call='electrician')=data.i18n['call-electrician']
-                input.call(type='hidden', value='locksmith', name='type')
+                    li
+                        a(data-call='msg')=data.i18n['msg']
+                p=data.i18n['text']
                 textarea(rows='5', name='msg')
-                input.button.button-block(type='submit', data.i18n['send'])
-            - if (msgs.length)
-                ul.list
-                    - msgs.forEach(function(msg) {
-                        - if (msg.from === 'from-admin')
-                            li
-                                a
-                                    span.from=data.i18n['msgTypes'][msg.from]
-                                    !{msg.text}
-
-                        - else
-                            li.pull-right
+                input.button.button-block(type='submit', value=data.i18n['send'])
+            ul.list.ims
+                - msgs.forEach(function(msg) {
+                    - if (msg.from === 'from-admin')
+                        li
+                            a
+                                span.from=data.i18n['msgTypes'][msg.from]
                                 !{msg.text}
-                    - });
+
+                    - else
+                        li.pull-right
+                            !{msg.text}
+                - });
