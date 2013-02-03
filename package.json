@@ -13,6 +13,7 @@
       "borschik": "0.2.x",
       "async": "0.1.x",
       "mongoose": "3.5.4",
-      "node-markdown" : "0.1.x"
+      "node-markdown" : "0.1.x",
+      "tplcpl": "*"
     }
 }

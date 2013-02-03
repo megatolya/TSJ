@@ -1,7 +1,8 @@
 $(function() {
-    $('.to-answer-form').click(function() {
+    $('body').on('click','.to-answer-form', function() {
         var id = $(this).parents('tr').attr('id');
         $('.modal').modal();
+        $('.modal textarea').val('');
         $('.msg-id').val(id); 
     });
     $('.im-send').click(function() {
@@ -12,11 +13,12 @@ $(function() {
             type: 'POST',
             data: { text: text, idMsg : idMsg },
             success : function(data) {
+                console.log(data);
                 $('.modal').modal('hide');
-                $('#'+idMsg).remove();
+                $('.reload').click();
             },
             error : function(data) {
-                console.log(err);
+                console.log(data);
             }
         });
     });
@@ -25,8 +27,9 @@ $(function() {
             url: '/admin/msgs',
             type: 'GET',
             success : function(data) {
-                $('.im-table').html(data);
-                console.log('ajax');
+                console.log(data);
+                var html = Templating.tpl('admin-ajax-im.jade', data);
+                $('.im-table').html(html);
             },
             error : function(data) {
                 $('.im-table').html(data);

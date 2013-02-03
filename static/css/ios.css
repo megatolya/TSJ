@@ -10,3 +10,15 @@ input[type='submit'] {
 li.pull-right {
     text-align: right;
 }
+ul.list li {
+    position: relative;
+}
+ul.list .from {
+    border-radius: 10px 0 0 0;
+    background: #222;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #ddd;
+    padding: 2px 10px;
+}

@@ -15,12 +15,10 @@ include ios-h
                         - if (msg.from === 'from-admin')
                             li
                                 a
-                                    span.count-main=data.msgTypes[msg.from][data.lang]
+                                    span.from=data.i18n['msgTypes'][msg.from]
                                     !{msg.text}
 
                         - else
                             li.pull-right
-                                a
-                                    span.count-main=data.msgTypes[msg.from][data.lang]
-                                    !{msg.text}
+                                !{msg.text}
                     - });

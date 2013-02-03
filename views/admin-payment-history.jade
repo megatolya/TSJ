@@ -1,0 +1,11 @@
+include admin-head
+.padding-40
+    table.table.table-hover
+        - logs.forEach(function(log){
+            tr
+                td=log.date
+                td
+                    a(href='/admin/account/'+ log.user._id)=log.user.name
+                td=data.i18n[log.log.type]
+                td=log.log.val + ' ' + data.i18n['rub']
+        - });

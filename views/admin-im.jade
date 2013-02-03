@@ -1,21 +1,20 @@
 include admin-head
 
 .padding-40
-    ul.nav.nav-pills
-        li.active
-            a=data.i18n['new-msgs']
-        li
-            a=data.i18n['ims']
     button.btn.btn-primary.reload=data.i18n['reload']
     table.table.table-hover.im-table
         - msgs && msgs.length && msgs.forEach(function(msg){
             tr(id=msg.msg._id)
+                td=msg.date
                 td
-                    a(href='/admin/account/' + msg.msg.from)=msg.user.name
+                    a(href='/admin/account/' + (msg.msg.from == 'admins' ? msg.msg.to : msg.msg.from))=msg.user.name
                 td=msg.msg.text
-                td=data.msgTypes[msg.msg.type][data.lang]
+                td=data.i18n['msgTypes'][msg.msg.type]
                 td
-                    button.btn.btn-mini.to-answer-form=data.i18n['to-answer']
+                    - if (msg.msg.to == 'admins')
+                        button.btn.btn-mini.to-answer-form=data.i18n['to-answer']
+                    - else
+                        span=data.i18n['msgTypes']['from-admin']
         - });
 .modal.hide.fade
     .modal-body

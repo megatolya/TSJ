@@ -6,7 +6,7 @@ lib-cov
 *.out
 *.pid
 *.gz
-
+static/js/jade.js
 pids
 logs
 results

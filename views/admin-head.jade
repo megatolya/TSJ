@@ -7,6 +7,7 @@ html
         link(rel='stylesheet', href='/static/css/admin.css')
         script(src='/static/components/jquery/jquery.min.js')
         script(src='/static/components/bootstrap/js/bootstrap.js')
+        script(src='/static/js/jade.js')
         script(src='/static/js/admin.js')
     body
         .navbar
@@ -15,7 +16,7 @@ html
                     li(class=tab == 1 ? 'active' : '')
                         a(href='/admin/im')=data.i18n.messages
                     li(class=tab == 2 ? 'active' : '')
-                        a(href='#')=data.i18n.payments
+                        a(href='/admin/payments')=data.i18n.payments
                     li(class=tab == 3 ? 'active' : '')
                         a(href='/admin/manage-accounts')=data.i18n['manage-accounts']
                     li(class=tab == 4 ? 'active' : '')

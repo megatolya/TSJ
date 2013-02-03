@@ -8,6 +8,7 @@ DB-PATH = ~/mongodb
 build:
 	@echo 'installing node modules'
 	@npm install
+	@cd node_modules/tplcpl && npm install uglify-js && cd -
 	@mkdir $(BOWER_MODULES)
 	@echo 'installing bower components'
 	@node ./node_modules/bower/bin/bower install
@@ -20,10 +21,14 @@ build:
 	@node node_modules/borschik/bin/borschik -i static/components/bootstrap/css/bootstrap.css -t css > static/components/bootstrap/css/bootstrap.min.css
 	@echo 'building iOS GUI library'
 	@cd $(BOWER_MODULES)/ratchet && make build
-
+	@echo 'copmpiling client-side templates'
+	node_modules/tplcpl/app/cpl.js -t views/ -o static/js/jade.js
 clean:
 	-rm -rf $(NODE_MODULES)
 	-rm -rf $(BOWER_MODULES)
+	rm static/js/jade.js
+jade:
+	node_modules/tplcpl/app/cpl.js -t views/ -o static/js/jade.js
 start:
 	@echo 'starting node'
 	@node boot.js

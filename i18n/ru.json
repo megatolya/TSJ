@@ -41,5 +41,15 @@
     "phone": "Телефон",
     "days-past": "Дней до конца месяца",
     "pay": "Оплатить",
-    "how-much-will-pay": "Сколько положить на счет?"
+    "how-much-will-pay": "Сколько положить на счет?",
+    "perMonthPayment": "Ежемесячная плата",
+    "paymentHistory": "История платежей",
+    "payment": "Платеж",
+    "msgTypes": {
+        "msg": "",
+        "locksmith": "Вызвать слесаря",
+        "electrician": "Вызвать электрика",
+        "from-admin": "от администратора",
+        "from-me": "от меня"
+    }
 }
