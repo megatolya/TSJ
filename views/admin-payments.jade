@@ -1,11 +1,10 @@
 include admin-head
 .padding-40
-    a.spisat.btn.btn-success(href='/spisat')=data.i18n['spisat']
-    .last-update-info
-        span.last-updated=data.i18n['last-payment']
-        span.last-updated-time=last_update
-    br
-    br
+    .well
+        a.spisat.btn.btn-success(href='/spisat')=data.i18n['spisat']
+        .last-update-info
+            span.last-updated=data.i18n['last-payment']
+            span.last-updated-time=last_update
     .balances
         table.table.table-hover
             tr
