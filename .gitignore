@@ -12,4 +12,5 @@ logs
 results
 node_modules/
 static/components/
+last_payment
 npm-debug.log

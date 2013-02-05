@@ -6,6 +6,7 @@ BOWER_MODULES = ./static/components
 DB-PATH = ~/mongodb
 
 build:
+	@touch last_payment
 	@echo 'installing node modules'
 	@npm install
 	@cd node_modules/tplcpl && npm install uglify-js && cd -
@@ -30,7 +31,6 @@ clean:
 jade:
 	node_modules/tplcpl/app/cpl.js -t views/ -o static/js/jade.js
 start:
-	@echo 'starting node'
 	@node boot.js
 db-template:
 	@echo 'creating basic db records'

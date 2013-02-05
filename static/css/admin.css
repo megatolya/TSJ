@@ -23,4 +23,9 @@ body, html {
 .reload{
     margin-bottom: 20px;
 }
+.last-update-info {
+    margin: 0 10px;
+    font-size: 12px;
+    display: inline-block;
+}
 
