@@ -17,10 +17,12 @@ include ios-h
                     - if (msg.from === 'from-admin')
                         li
                             a
-                                span.from=data.i18n['msgTypes'][msg.from]
+                                span.im-from=data.i18n['msgTypes'][msg.from]
+                                span.im-time=msg.time
                                 !{msg.text}
 
                     - else
                         li.pull-right
+                            span.im-time=msg.time
                             !{msg.text}
                 - });
