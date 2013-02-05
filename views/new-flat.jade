@@ -6,7 +6,7 @@ include admin-head
                 td
                     p=data.i18n.number
                 td
-                    input(name='number')
+                    input(name='number', required)
             tr
                 td
-                    input.btn.btn-success(type='submit', value=data.i18n.add)
+                    input.btn.btn-success(type='submit', required, value=data.i18n.add)

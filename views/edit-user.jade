@@ -8,22 +8,22 @@ form(action='/admin/edit-user', method='post')
                 td
                     p=data.i18n.login
                 td
-                    input(name='login', value=user.login)
+                    input(name='login', required, value=user.login)
             tr
                 td
                     p=data.i18n.password
                 td
-                    input(name='password', value=user.password)
+                    input(name='password', required, value=user.password)
             tr
                 td
                     p=data.i18n.name
                 td
-                    input(name='name', value=user.name)
+                    input(name='name', required, value=user.name)
             tr
                 td
                     p=data.i18n.phone
                 td
-                    input(name='phone', value=user.phone)
+                    input(name='phone', required, value=user.phone)
             tr
                 td
                     input.btn.btn-success(type='submit', value=data.i18n.edit)

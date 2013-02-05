@@ -7,17 +7,17 @@ form(action='/admin/edit-flat', method='post')
                 td
                     p=data.i18n.balance
                 td
-                    input(name='balance', value=flat.balance, disabled)
+                    input(name='balance', required, value=flat.balance, disabled)
             tr
                 td
                     p=data.i18n['perMonthPayment']
                 td
-                    input(name='perMonthPayment', value=flat.perMonthPayment)
+                    input(name='perMonthPayment', required, value=flat.perMonthPayment)
             tr
                 td
                     p=data.i18n.number
                 td
-                    input(name='number', value=flat.number)
+                    input(name='number', required, value=flat.number)
             tr
                 td
                     input.btn.btn-success(type='submit', value=data.i18n.edit)

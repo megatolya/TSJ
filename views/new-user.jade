@@ -6,17 +6,17 @@ include admin-head
                 td
                     p=data.i18n.login
                 td
-                    input(name='login')
+                    input(name='login', required)
             tr
                 td
                     p=data.i18n.password
                 td
-                    input(name='password')
+                    input(name='password', required, type='password')
             tr
                 td
                     p=data.i18n.name
                 td
-                    input(name='name')
+                    input(name='name', required)
             tr
                 td
                     p=data.i18n.flat
