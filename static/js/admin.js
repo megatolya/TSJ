@@ -6,8 +6,10 @@ $(function() {
         $('.msg-id').val(id); 
     });
     $('.spisat').click(function(e) {
+        var $this = $(this);
         e.preventDefault();
-        $(this).attr('disabled', 'disabled');
+        if ($this.attr('disabled')) return;
+        $this.attr('disabled', 'disabled');
         $.ajax({
             url: '/spisat',
             type: 'GET',
@@ -27,6 +29,7 @@ $(function() {
                 });
             },
             error : function  (data) {
+                console.log('error');
                 console.log(data);
             }
         });
@@ -50,6 +53,7 @@ $(function() {
     });
     $('.reload').click(function() {
         var $this = $(this);
+
         $this.attr('disabled', 'disabled');
         $.ajax({
             url: '/admin/msgs',
