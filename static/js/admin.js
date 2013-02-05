@@ -49,10 +49,13 @@ $(function() {
         });
     });
     $('.reload').click(function() {
+        var $this = $(this);
+        $this.attr('disabled', 'disabled');
         $.ajax({
             url: '/admin/msgs',
             type: 'GET',
             success : function(data) {
+                $this.removeAttr('disabled');
                 console.log(data);
                 var html = Templating.tpl('admin-ajax-im.jade', data);
                 $('.im-table').html(html);
