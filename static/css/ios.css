@@ -37,3 +37,12 @@ ul.list .im-from {
     border-bottom: 1px solid gray;
     margin-bottom: 10px;
 }
+.center {
+    text-align: center;
+}
+.neighbours {
+    width: 100%;
+}
+.neighbours td {
+    padding: 10px;
+}

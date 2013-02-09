@@ -54,6 +54,7 @@
     "last-payment": "Последний раз списано: ",
     "now": "Сейчас",
     "never": "Никогда",
+    "neighbours": "Соседи",
     "msgTypes": {
         "msg": "",
         "locksmith": "Вызвать слесаря",

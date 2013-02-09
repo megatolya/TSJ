@@ -1,0 +1,13 @@
+include ios-h
+            h3.center=data.i18n.neighbours
+            table.neighbours
+                tr
+                    td=data.i18n.name
+                    td=data.i18n.phone
+                    td=data.i18n.number
+                - users.forEach(function(user) {
+                    tr
+                        td=user.user.name
+                        td=user.user.phone
+                        td=user.flat.number
+                - });
