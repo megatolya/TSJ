@@ -28,4 +28,16 @@ body, html {
     font-size: 12px;
     display: inline-block;
 }
-
+a.pseudo {
+    text-decoration: none;
+    border-bottom: 1px solid #08c;
+    cursor: pointer;
+}
+a.pseudo:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #08c;
+    color: #08c;
+}
+.get-db {
+    margin: 20px;
+}

@@ -1,0 +1,16 @@
+table.table.table-bordered(data-table=table)
+    tr
+        - for (key in items[0]) {
+            td=key
+        - }
+    - items.forEach(function(item) {
+        tr(data-id=item._id)
+            - for (key in item) {
+                - if (key != '_id' && key != '__v') {
+                    td
+                        input(data-key=key, data-old-val=item[key],value=item[key])
+                - } else {
+                    td=item[key]
+                - }
+            - }
+    - });

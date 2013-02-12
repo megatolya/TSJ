@@ -1,0 +1,16 @@
+include admin-head
+.padding-40
+    //-table.table.table-hover.table-bordered
+    .db-management
+        .table
+            a.get-db.pseudo(data-get='msgs')=data.i18n['msgs']
+            .table-content
+        .table
+            a.get-db.pseudo(data-get='users')=data.i18n['users']
+            .table-content
+        .table
+            a.get-db.pseudo(data-get='flats')=data.i18n['flats']
+            .table-content
+        .table
+            a.get-db.pseudo(data-get='logs')=data.i18n['logs']
+            .table-content
