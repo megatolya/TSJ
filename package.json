@@ -15,6 +15,7 @@
         "async": "0.1.x",
         "mongoose": "3.5.4",
         "node-markdown": "0.1.x",
+        "winston": "0.6.2",
         "tplcpl": "*"
     },
     "subdomain": "diplom",
