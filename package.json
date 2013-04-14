@@ -1,10 +1,9 @@
 {
-    "name": "utility",
+    "name": "TSJ",
     "description": "my diploma project",
     "version": "1.0.0",
     "private": true,
     "author": "Anatoliy Ostrovskiy",
-    "main": "boot.js",
     "dependencies": {
         "jquery": "1.8.x",
         "express": "3.x",
@@ -18,11 +17,11 @@
         "winston": "0.6.2",
         "tplcpl": "*"
     },
-    "subdomain": "diplom",
+    "main": "boot.js",
     "scripts": {
         "start": "boot.js"
     },
     "engines": {
-        "node": "0.8.x"
+        "node": ">0.8.x"
     }
 }
