@@ -8,7 +8,13 @@ table.table.table-bordered(data-table=table)
             - for (key in item) {
                 - if (key != '_id' && key != '__v') {
                     td
-                        input(disabled, data-key=key, data-old-val=item[key],value=item[key])
+                        - if (typeof item[key] == 'object')
+                            p=JSON.stringify(item[key])
+                        - else if (typeof item[key] == 'boolean')
+                            p=item[key] ? 'true' : 'false'
+                        - else
+                            //-input(data-key=key, data-old-val=item[key],value=item[key])
+                            p=item[key]
                 - } else {
                     td=item[key]
                 - }
