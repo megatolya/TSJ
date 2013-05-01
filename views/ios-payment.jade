@@ -3,7 +3,7 @@ include ios-h
             ul.list
                 - fullPaymentList.forEach(function (payment) {
                     li
-                        p=payment.name
+                        p=payment.name + (payment.valuable && payment.price ? ' - ' + payment.price : '')
                         span.count=payment.sum
                         - if (payment.valuable && !payment.value) {
                             a.button.set-pay-val(data-payment=id.toString(), data-id=payment.id)=data.i18n['setValue']
