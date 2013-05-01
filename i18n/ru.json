@@ -1,7 +1,12 @@
 {
     "messages": "Сообщения",
     "payments": "Счета",
+    "setValue": "Указать количество",
+    "Payments": "Платежи",
+    "Payment": "Платеж",
+    "total": "Итого",
     "manage-accounts": "Управление пользователями",
+    "generate-payment": "Сгенерировать расчетный лист",
     "change-pass": "Сменить пароль",
     "login": "Логин",
     "password": "Пароль",

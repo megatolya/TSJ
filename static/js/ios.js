@@ -1,6 +1,9 @@
 $(function () {
-    $('a').mousedown(function () {
+    $('a, li').mousedown(function () {
         var href  = $(this).attr('href');
+        if (!href)
+            return;
+
         if (typeof href !== 'undefined' && href !== false) {
             window.location.href=href;
         }
@@ -46,6 +49,31 @@ $(function () {
                 }
             });
 
-        };
+        }
+    });
+    $('.set-pay-val').mousedown(function () {
+        var $this = $(this),
+            payment = $this.data('payment'),
+            id = $this.data('id'),
+            newVal = +prompt('Указать количество');
+
+        if (!newVal || isNaN(newVal))
+            return;
+
+        $.ajax({
+            url: '/change-payment-val',
+            type: 'POST',
+            data: {
+                payment: payment,
+                id: id,
+                newVal: newVal
+            },
+            success : function(data) {
+                //location.reload();
+            },
+            error : function(data) {
+                console.log(data);
+            }
+        });
     });
 });

@@ -1,0 +1,15 @@
+include ios-h
+            h3.center=data.i18n.Payments
+            ul.list
+                - fullPaymentList.forEach(function (payment) {
+                    li
+                        p=payment.name
+                        span.count=payment.sum
+                        - if (payment.valuable && !payment.value) {
+                            a.button.set-pay-val(data-payment=id.toString(), data-id=payment.id)=data.i18n['setValue']
+                        - }
+
+                - });
+            h3=data.i18n['total'] + ': ' + sum
+            br
+            a.button(href='/generate-payment/' + id, target='_blank')=data.i18n['generate-payment']

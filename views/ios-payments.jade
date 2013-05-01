@@ -1,0 +1,13 @@
+include ios-h
+            h3.center=data.i18n.Payments
+            ul.list
+                - list.forEach(function (month) {
+                    - if (month.payed)
+                        li.past(href='/payments/' + month.id)
+                            .chevron
+                            p=month.month + '.' + month.year
+                    - else
+                        li(href='/payments/' + month.id)
+                            .chevron
+                            p=month.month + '.' + month.year
+                - });

@@ -31,6 +31,7 @@ clean:
 jade:
 	node_modules/tplcpl/app/cpl.js -t views/ -o static/js/jade.js
 start:
+	@make jade
 	@node boot.js
 db-template:
 	@echo 'creating basic db records'

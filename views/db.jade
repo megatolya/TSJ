@@ -1,6 +1,5 @@
 include admin-head
 .padding-40
-    //-table.table.table-hover.table-bordered
     .db-management
         .table
             a.get-db.pseudo(data-get='msgs')=data.i18n['msgs']
@@ -13,4 +12,7 @@ include admin-head
             .table-content
         .table
             a.get-db.pseudo(data-get='logs')=data.i18n['logs']
+            .table-content
+        .table
+            a.get-db.pseudo(data-get='months')=data.i18n['Payments']
             .table-content

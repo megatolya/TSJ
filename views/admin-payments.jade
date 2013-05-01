@@ -10,7 +10,6 @@ include admin-head
             tr
                 td=data.i18n['number']
                 td=data.i18n['balance']
-                td=data.i18n['perMonthPayment']
                 td
             - flats.forEach(function(flat){
                 tr
@@ -18,7 +17,6 @@ include admin-head
                         a(href='/admin/flat/'+flat._id)=flat.number
                     td=flat.balance + ' ' + data.i18n['rub']
                     td
-                        span=flat.perMonthPayment + ' ' + data.i18n['rub']
                         a.btn.btn-mini(href='/admin/edit-flat/'+flat._id)
                             i.icon-pencil
                     td

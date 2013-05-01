@@ -1,0 +1,23 @@
+!!! 5
+html
+head
+    meta(charset="utf-8")
+    link(rel='stylesheet', href='/static/components/bootstrap/css/bootstrap.css')
+    title=''
+body
+
+    .container
+        br
+        br
+        br
+        table.table.table-bordered
+            - fullPaymentList.forEach(function (payment) {
+                tr
+                    td=payment.name
+                    td=payment.sum
+                    //-- if (payment.valuable && !payment.value) {
+                        //-a.button.set-pay-val=data.i18n['setValue']
+                    //-- }
+
+            - });
+        h3=data.i18n['total'] + ': ' + sum
