@@ -15,14 +15,22 @@ include admin-head
 .well
     - payments.forEach(function(monthPayments) {
         table.table.table-bordered
-            tr
-                td(colspan=2)
-                    div=monthPayments.date
+            tr(class=monthPayments.month.payed ? '' : 'error')
+                td(colspan=4)
+                    span=monthPayments.date
                     - if (!monthPayments.month.payed)
-                        .warning='dontPayed'
+                        span.warning.label.label-warning.pull-right=data.i18n['dontPayed']
             - monthPayments.fullPaymentList.forEach(function (payment, i) {
                 tr
                     td=payment.name
                     td=payment.sum
+                    - if (payment.valuable)
+                        td=payment.value || 0
+                    - else
+                        td
+                    td
+                        button.btn.btn-mini=data.i18n['edit']
             - });
+            tr
+                td(colspan=4)=data.i18n['total'] + ': ' + monthPayments.sum
     - });

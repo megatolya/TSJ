@@ -8,7 +8,8 @@ include admin-head
         - flats.forEach(function (flat){
                 tr.info
                     td
-                        b=data.i18n.flat + ' #' + flat.flat.number + ' ' + data.i18n.balance + ': ' + flat.flat.balance
+                        b
+                            a(href='/admin/flat/' + flat.flat._id)=data.i18n.flat + ' #' + flat.flat.number + ' ' + data.i18n.balance + ': ' + flat.flat.balance
                     td
                     td
                         .btn-group

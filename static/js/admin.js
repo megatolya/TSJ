@@ -1,12 +1,15 @@
 $(function() {
     $('body').on('click','.to-answer-form', function() {
         var id = $(this).parents('tr').attr('id');
+
         $('.modal').modal();
         $('.modal textarea').val('');
-        $('.msg-id').val(id); 
+        $('.msg-id').val(id);
     });
+
     $('.spisat').click(function(e) {
         var $this = $(this);
+
         e.preventDefault();
         if ($this.attr('disabled')) return;
         $this.attr('disabled', 'disabled');
@@ -34,9 +37,11 @@ $(function() {
             }
         });
     });
+
     $('.im-send').click(function() {
-        var text = $('.im-form textarea').val();
-        var idMsg = $('.im-form input').val();
+        var text = $('.im-form textarea').val(),
+            idMsg = $('.im-form input').val();
+
         $.ajax({
             url: '/admin/msg',
             type: 'POST',
@@ -51,6 +56,7 @@ $(function() {
             }
         });
     });
+
     $('.reload').click(function() {
         var $this = $(this);
 
@@ -69,26 +75,28 @@ $(function() {
             }
         });
     });
+
     $('.get-db').click(function() {
-        var link = $(this);
-        var table = link.data('get');
+        var link = $(this),
+            table = link.data('get');
 
         $.ajax({
             url: '/db/' + table,
             type: 'GET',
             success : function(data) {
-                var html = Templating.tpl('db-table.jade', data);
-                var content = $(link.parents('.table').find('.table-content'))
-                content.html(html);
+                var html = Templating.tpl('db-table.jade', data),
+                    content = $(link.parents('.table').find('.table-content'));
+
                 $(content.find('input')).blur(function(){
-                    var input = $(this);
-                    var table = input.parents('table').data('table');
-                    var key = input.data('key');
-                    var value = input.val();
-                    var oldValue = input.data('old-val');
+                    var input = $(this),
+                        table = input.parents('table').data('table'),
+                        key = input.data('key'),
+                        value = input.val(),
+                        oldValue = input.data('old-val');
+
                     if (oldValue != value) {
-                        var id = input.parents('tr').addClass('success').data('id');
-                        var req = {
+                        var id = input.parents('tr').addClass('success').data('id'),
+                            req = {
                             id: id,
                             table: table,
                             key: key,
