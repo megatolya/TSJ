@@ -87,6 +87,7 @@ $(function() {
                 var html = Templating.tpl('db-table.jade', data),
                     content = $(link.parents('.table').find('.table-content'));
 
+                content.html(html);
                 $(content.find('input')).blur(function(){
                     var input = $(this),
                         table = input.parents('table').data('table'),
