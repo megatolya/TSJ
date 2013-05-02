@@ -11,6 +11,7 @@ include admin-head
                 td=data.i18n['number']
                 td=data.i18n['balance']
                 td
+                td
             - flats.forEach(function(flat){
                 tr
                     td
@@ -21,4 +22,5 @@ include admin-head
                             i.icon-pencil
                     td
                         a.btn.btn-mini(href='/admin/payment-history/'+ flat._id)=data.i18n['paymentHistory']
+
             - });

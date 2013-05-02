@@ -64,7 +64,7 @@
     "now": "Сейчас",
     "never": "Никогда",
     "neighbours": "Соседи",
-    "db-management": "СУБД",
+    "db-management": "База данных",
     "msgTypes": {
         "msg": "",
         "locksmith": "Вызвать слесаря",

@@ -1,7 +1,7 @@
 include admin-head
 .well
     h3=data.i18n.flat + ' #' + flat.number
-    h5='Текущий счет: ' + flat.balance + ' ' + data.i18n.rub
+    h5=data.i18n['balance'] + ': ' + flat.balance + ' ' + data.i18n.rub
     a.btn(href='/admin/edit-flat/' + flat._id)=data.i18n.edit
 .well
     - if (users.length)
@@ -12,3 +12,17 @@ include admin-head
             - })
     - else
         p=data.i18n['no-livers']
+.well
+    - payments.forEach(function(monthPayments) {
+        table.table.table-bordered
+            tr
+                td(colspan=2)
+                    div=monthPayments.date
+                    - if (!monthPayments.month.payed)
+                        .warning='dontPayed'
+            - monthPayments.fullPaymentList.forEach(function (payment, i) {
+                tr
+                    td=payment.name
+                    td=payment.sum
+            - });
+    - });
