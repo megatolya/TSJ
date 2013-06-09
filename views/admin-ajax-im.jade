@@ -1,3 +1,10 @@
+tr
+    td='Дата'
+    td='Пользователь'
+    td='Сообщение'
+    td='Тип сообщения'
+    td='Действие'
+    td='Статус'
 - msgs && msgs.length && msgs.forEach(function(msg){
     tr(id=msg.msg._id)
         td=msg.date
@@ -10,4 +17,8 @@
                 button.btn.btn-mini.to-answer-form=data.i18n['to-answer']
             - else
                 span=data.i18n['msgTypes']['from-admin']
+            - if (msg.msg.type != 'msg') {
+                button.btn.btn-mini.btn-success.change-status.in-work='Изменить статус'
+            - }
+        td=data.i18n['status-'+ msg.msg.status] || ''
 - });

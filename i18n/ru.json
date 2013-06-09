@@ -72,5 +72,8 @@
         "electrician": "Вызвать электрика",
         "from-admin": "от администратора",
         "from-me": "от меня"
-    }
+    },
+    "status-work": "В работе",
+    "status-error": "Ошибка",
+    "status-done": "Выполнено"
 }

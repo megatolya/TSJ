@@ -49,3 +49,14 @@ ul.list .im-from {
 .past {
     color: #aaa;
 }
+.popover:before, .popover:after {
+    display: none;
+}
+
+.popover {
+    top: 75px;
+    opacity: 1;
+}
+.popover .list {
+    height: 173px;
+}

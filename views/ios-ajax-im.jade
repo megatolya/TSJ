@@ -1,4 +1,7 @@
 - msgs.forEach(function(msg) {
+    - if (msg.status) {
+        button.change-status(data-id=msg.id)=data.i18n['status-' + msg.status];
+    - }
     - if (msg.from === 'from-admin')
         li
             a

@@ -3,20 +3,7 @@ include admin-head
 .padding-40
     button.btn.btn-primary.reload=data.i18n['reload']
     table.table.table-hover.im-table
-        - msgs && msgs.length && msgs.forEach(function(msg){
-            tr(id=msg.msg._id)
-                td=msg.date
-                td
-                    a(href='/admin/account/' + (msg.msg.from == 'admins' ? msg.msg.to : msg.msg.from))=msg.user.name
-                td=msg.msg.text
-                td=data.i18n['msgTypes'][msg.msg.type]
-                td
-                    - if (msg.msg.to == 'admins')
-                        button.btn.btn-mini.to-answer-form=data.i18n['to-answer']
-                    - else
-                        span=data.i18n['msgTypes']['from-admin']
-        - });
-.modal.hide.fade
+.im-modal.modal.hide.fade
     .modal-body
         form.im-form
             textarea
@@ -24,3 +11,12 @@ include admin-head
     .modal-footer
         button.im-send.btn.btn-mini.btn-success=data.i18n['send']
         button.btn.btn-mini(data-dismiss='modal')=data.i18n['cancel']
+.status-modal.modal.hide.fade
+    .modal-body
+        button.btn.btn-primary.change-status-btn(data-status="work")='В работе'
+        br
+        br
+        button.btn.btn-danger.change-status-btn(data-status="error")='Ошибка'
+        br
+        br
+        button.btn.btn-success.change-status-btn(data-status="done")='Выполнен'

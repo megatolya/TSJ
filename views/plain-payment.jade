@@ -11,13 +11,16 @@ body
         br
         br
         table.table.table-bordered
+            tr
+                td='Вид платежа'
+                td='Количество'
+                td='Тариф'
+                td='Итого к оплате'
             - fullPaymentList.forEach(function (payment) {
                 tr
                     td=payment.name
+                    td=payment.value ? payment.value : ''
+                    td=payment.price
                     td=payment.sum
-                    //-- if (payment.valuable && !payment.value) {
-                        //-a.button.set-pay-val=data.i18n['setValue']
-                    //-- }
-
             - });
         h3=data.i18n['total'] + ': ' + sum

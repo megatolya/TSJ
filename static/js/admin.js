@@ -1,8 +1,22 @@
+function reload(callback) {
+    $.ajax({
+        url: '/admin/msgs',
+        type: 'GET',
+        success : function(data) {
+            var html = Templating.tpl('admin-ajax-im.jade', data);
+            $('.im-table').html(html);
+        },
+        error : function(data) {
+            $('.im-table').html(data);
+        }
+    });
+}
+
 $(function() {
     $('body').on('click','.to-answer-form', function() {
         var id = $(this).parents('tr').attr('id');
 
-        $('.modal').modal();
+        $('.im-modal').modal();
         $('.modal textarea').val('');
         $('.msg-id').val(id);
     });
@@ -47,32 +61,54 @@ $(function() {
             type: 'POST',
             data: { text: text, idMsg : idMsg },
             success : function(data) {
-                console.log(data);
-                $('.modal').modal('hide');
-                $('.reload').click();
+                $('.im-modal').modal('hide');
+                reload();
             },
             error : function(data) {
-                console.log(data);
+                reload();
             }
         });
     });
 
-    $('.reload').click(function() {
-        var $this = $(this);
+    $('.change-status').click(function() {
+        var id = $(this).parents('tr').attr('id');
+
+        $('.status-modal').modal();
+        $('.change-status-btn').attr('data-id', id);
+    });
+
+    $('.change-status-btn').click(function() {
+        function done() {
+            $this.removeAttr('disabled');
+            $('.status-modal').modal('hide');
+            reload();
+        }
+
+        var $this = $(this),
+            id = $this.data('id'),
+            status = $this.data('status');
 
         $this.attr('disabled', 'disabled');
         $.ajax({
-            url: '/admin/msgs',
-            type: 'GET',
-            success : function(data) {
-                $this.removeAttr('disabled');
-                console.log(data);
-                var html = Templating.tpl('admin-ajax-im.jade', data);
-                $('.im-table').html(html);
+            url: '/status',
+            type: 'POST',
+            data: {
+                id: id,
+                status: status
             },
-            error : function(data) {
-                $('.im-table').html(data);
-            }
+            success : done,
+            error : done
+        });
+    });
+
+    // im too lazy to cache ;/
+    if ($('.reload').length)
+        reload();
+    $('.reload').click(function() {
+        var $this = $(this);
+        $this.attr('disabled', 'disabled');
+        reload(function() {
+            $this.removeAttr('disabled');
         });
     });
 
