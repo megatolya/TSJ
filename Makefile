@@ -46,4 +46,9 @@ db-test:
 db-start:
 	mongod --dbpath $(DB-PATH)
 
+restart:
+	make db-erase
+	make db-template
+	make start
+
 
